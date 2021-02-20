@@ -37,7 +37,7 @@ fn extract_rust_process(ps: Vec<process::ProcessResult<process::Process>>) -> Re
     for p in ps {
         let p = match p {
             Ok(p) => p,
-            Err(e) => continue,
+            Err(_) => continue,
         };
         /*let ppid = match p.ppid() {
             Ok(p) => match p {
@@ -46,9 +46,10 @@ fn extract_rust_process(ps: Vec<process::ProcessResult<process::Process>>) -> Re
             },
             Err(e) => 0u32,
         };*/
+        // TODO: check if Rust process.
         let name = match p.name() {
             Ok(n) => n,
-            Err(e) => String::from(""),
+            Err(_) => String::new(),
         };
         res.push(Process {
             pid: p.pid(),

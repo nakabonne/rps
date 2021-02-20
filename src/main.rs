@@ -9,7 +9,7 @@ use anyhow::Result;
 
 fn run() -> Result<bool> {
     let matches = app::build_app().get_matches_from(env::args_os());
-    if let Some(ref sub_m) = matches.subcommand_matches("memstats") {
+    if let Some(_) = matches.subcommand_matches(cmd::CMD_MEM_STATS) {
         return cmd::print_mem_stats();
     }
 

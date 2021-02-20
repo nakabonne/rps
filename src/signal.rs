@@ -1,1 +1,1 @@
-const MEM_STATS: u8 = 0x1;
+pub const MEM_STATS: u8 = 0x1;
