@@ -8,9 +8,9 @@ pub fn print_mem_stats() -> Result<bool> {
 }
 
 pub fn print_rust_processes() -> Result<bool> {
-    let processes = rprocess::find_all();
+    let processes = rprocess::find_all().unwrap();
     for p in processes.iter() {
-        println!("{:?}", p);
+        println!("{}", p);
     }
     Ok(true)
 }
