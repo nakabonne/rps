@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub struct Process {
     pid: i32,
     ppid: i32,
